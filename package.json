@@ -7,7 +7,8 @@
     "dev": "nodemon server.js",
     "postgres-init": "initdb ~/pg",
     "postgres-start": "pg_ctl -D ~/pg start",
-    "migrate": "npx sequelize db:migrate"
+    "migrate": "npx sequelize-cli db:migrate",
+    "seeding": "npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
