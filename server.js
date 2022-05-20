@@ -5,11 +5,19 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
+// Connection PostgreSql
+require('./config/connection.js')
+
+// Import routes
+const routes = require('./app/routes')
+
 // Setup
 const app = express()
 app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
 app.use( cors() )
+
+routes(app)
 
 const PORT = process.env.PORT || 8000
 
