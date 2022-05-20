@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 require('./config/connection.js')
 
 // Import routes
-const routes = require('./app/routes')
+const router = require('./app/router')
 
 // Setup
 const app = express()
@@ -17,7 +17,7 @@ app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
 app.use( cors() )
 
-routes(app)
+router(app)
 
 const PORT = process.env.PORT || 8000
 
